@@ -148,3 +148,25 @@ for (let todo of todos) {
   //better for arrays
   console.log(todo.text);
 }
+
+//high order array methods - forEach, map, filter
+
+todos.forEach(function (todo) {
+  console.log(todo.text);
+});
+
+const todoText = todos.map(function (todo) {
+  return todo.text;
+});
+
+console.log(todoText);
+
+const todoCompleated = todos
+  .filter(function (todo) {
+    return todo.isCompleated === true;
+  })
+  .map(function (todo) {
+    return todo.text;
+  });
+
+console.log(todoCompleated);
