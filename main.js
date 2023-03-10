@@ -170,3 +170,57 @@ const todoCompleated = todos
   });
 
 console.log(todoCompleated);
+
+//conditionals
+
+const first = 20;
+
+if (first === 10) {
+  console.log("first is 10");
+} else if (first > 10) {
+  console.log("first is greater than 10");
+} else {
+  console.log("first is less than 10");
+}
+
+const second = 4;
+const third = 11;
+
+if (x > 6 && third > 10) {
+  console.log("second is more than 5 or third is more than 10");
+} // so we don't nest ifs
+
+//ternary operator
+
+const fourth = 10;
+
+const color = fourth > 10 ? "red" : "blue"; //if it's true red, if not blue
+console.log(color);
+
+//switch
+
+switch (color) {
+  case "red":
+    console.log("color is red");
+    break;
+  case "blue":
+    console.log("color is blue");
+    break;
+  default:
+    console.log("color is not red or blue");
+    break;
+}
+
+//functions
+
+function addN(num1 = 1, num2 = 1) {
+  return num1 + num2;
+}
+
+console.log(addN(5, 4));
+
+const addNums = (num1) => num1 + 5;
+
+console.log(addNums(5));
+
+todos.forEach((todo) => console.log(todo));
