@@ -224,3 +224,81 @@ const addNums = (num1) => num1 + 5;
 console.log(addNums(5));
 
 todos.forEach((todo) => console.log(todo));
+
+//OOP es5 (pre classes)
+//Constructor functions
+
+function Person(firstName, lastName, dob) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.dob = new Date(dob);
+}
+
+Person.prototype.getBirthYear = function () {
+  return this.dob.getFullYear();
+};
+
+Person.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+};
+
+//instantiate an object
+
+const person1 = new Person("John", "Doe", "4-3-1980");
+const person2 = new Person("Marry", "Smith", "3-6-1970");
+
+console.log(person2.firstName);
+console.log(person2.getBirthYear());
+
+console.log(person1.getFullName());
+console.log(person1);
+
+//class
+
+class Persons {
+  constructor(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+  }
+
+  getBirthYear() {
+    return this.dob.getFullYear();
+  }
+
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+//DOM manipulation
+
+//single element
+const form = document.getElementById("my-form");
+console.log(document.querySelector(".container"));
+
+console.log(form);
+
+//multiple element
+console.log(document.querySelectorAll(".item"));
+console.log(document.getElementsByClassName("item")); //html collection
+console.log(document.getElementsByTagName("li")); //html collection
+
+const items = document.querySelectorAll(".item");
+
+items.forEach((item) => console.log(item));
+
+const ul = document.querySelector(".items");
+// ul.remove();
+ul.lastElementChild.remove();
+ul.firstElementChild.textContent = "Hello";
+ul.children[1].innerText = "Marta";
+ul.lastElementChild.innerHTML = "<h1>Hello</h1>";
+
+const btn = document.querySelector(".btn");
+btn.style.background = "green";
+
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log(e.target.className);
+});
